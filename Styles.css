@@ -1,13 +1,17 @@
-body {
+*{
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4; 
     padding: 0;
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; 
+}
+
 header {
     display: flex;
+    position:static;
     margin: 0 0 0 0;
     padding: 5px;
     background-color: #cfcfcf;
@@ -40,7 +44,7 @@ header {
 
 .menu {
     width: 250px;
-    height: 100vh;
+    height: 100%;
     background-color: #2e7d32;
     color: #ffffff;
     position: fixed; 
@@ -49,6 +53,7 @@ header {
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
     z-index: 100;
     margin: 0;
+    transition: transform 0.5s ease-in-out;
 }
 
 .menu h2 {
@@ -101,7 +106,7 @@ header p {
 
 
 .contenedor-cuadros {
-    display: flex;
+    display: inline-flex;
     gap: 20px;
     justify-content: space-between;
     align-items: flex-start;
@@ -118,6 +123,7 @@ header p {
 
 .cuadro {
     display: flex;
+    position:static;
     align-items: center;
     width: 320px;
     background-color: #f1fff1; 
@@ -154,6 +160,7 @@ header p {
     margin: 5px 5px 0 0;
 
 }
+
 
 .primeras-graficas .segundas-graicas{
     display: inline-flex;
@@ -226,7 +233,11 @@ td:hover{
 }
 
 .section-camaras {
+    gap: 20px;
     background-color: #ffffff;
+    justify-content: left;
+    align-items: flex-start;
+    max-width: 1200px;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -235,20 +246,21 @@ td:hover{
 }
 
 .camara-estado {
-    display: flex;
+    display: inline-flex;
     gap: 15px;
 }
 
 .camara {
+    display: flex;
+    align-items: center;
     background: #f1fff1;
     border:2px solid #a8d5a8;
     padding: 10px;
     border-radius: 5px;
-    display: flex;
-    align-items: center;
     transition: transform 0.5s;
     color: #2e7d32;
 }
+
 
 .camara:hover{
     transform: scale(1.05);
@@ -312,6 +324,73 @@ td:hover{
     font-size: 20px;
     top: 20%; 
     left: 70%;
+}
+
+
+@media screen and (max-width: 1000px){
+    .menu {
+        transform: translateX(-100%);
+        position:absolute;
+    }
+
+    * {
+        align-items: center;
+    }
+
+    .contenido {
+        margin-left: 0;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .contenedor-cuadros {
+        flex-direction: column;
+        align-items: center;
+    }
+    .cuadro {
+        width: 100%;
+    }
+
+    .section-camaras {
+        align-items: center;
+        padding:20px;
+        width: auto;
+        display: inline-flex;
+    }
+    
+    .camara{
+        width: 100%;
+    }
+
+    #contacto {
+        width: 100%;
+    }
+
+    .pie {
+        padding:50px;
+        width: auto;
+    }
+
+}
+
+@media screen and (max-width: 1500px){
+    .contenido {
+        align-items: center;
+    }
+    .contenedor-cuadros {
+        flex-direction: column;
+        align-items: center;
+    }
+    .cuadro {
+        width: 100%;
+    }
+    .section-camaras {
+        flex-direction: column;
+        align-items: center;
+    }
+    .camara{
+        width: 100%;
+    }
 }
 
 #contacto{

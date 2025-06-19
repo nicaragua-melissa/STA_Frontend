@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Ruta Crítica</title>
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="RutaCriticaStyles.css">
+</head>
+<body>
+    <div id="menuOverlay"></div>
+    <!-- MENU LATERAL IZQUIERDO -->
+    <section class="sidebar" id="menuLateral">
+        <a href="/index.html" class="sidebar__brand">
+            <img src="../recursos/Logo STA sin fondo.png" class="sidebar__logo" alt="Logo STA">
+            <span class="sidebar__title">Save The Animals</span>
+        </a>
+        <ul class="sidebar__menu">
+            <li class="sidebar__item">
+                <a href="/Informate/Informate.html" class="sidebar__link">
+                    <i class='bx bxs-book-bookmark sidebar__icon'></i>
+                    <span class="sidebar__text">Infórmate</span>
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="/Denunciar/Denunciar.html" class="sidebar__link">
+                    <i class='bx bxs-file-find sidebar__icon'></i>
+                    <span class="sidebar__text">Denunciar</span>
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="/dashboard.html" class="sidebar__link">
+                    <i class='bx bxs-dashboard sidebar__icon'></i>
+                    <span class="sidebar__text">Dashboard</span>
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="RutaCriticaIndex.html" class="sidebar__link sidebar__link--active">
+                    <i class='bx bxs-traffic-cone sidebar__icon'></i>
+                    <span class="sidebar__text">Rutas Críticas</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section class="main-content" id="content">
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <i class='bx bx-menu navbar__toggle-sidebar' id="toggleSidebar" aria-label="Abrir menú"></i>
+            <form class="navbar__form" action="#">
+                <div class="navbar__form-group">
+                    <input id="searchInput" class="navbar__form-group-input" type="text" placeholder="Buscar...">
+                    <i class='bx bx-search navbar__form-group-icon'></i>
+                </div>
+            </form>
+            <div class="navbar__right">
+                <a href="#" class="navbar__link">
+                    <i class='bx bxs-bell navbar__link-icon'></i>
+                    <span class="navbar__link-badge">500</span>
+                </a>
+                <div class="navbar__profile" tabindex="0">
+                    <i class='bx bxs-user-circle navbar__profile-img' style="font-size: 2rem;"></i>
+                    <ul class="navbar__profile-menu">
+                        <li class="navbar__profile-item">
+                            <a href="#" class="navbar__profile-link">
+                                <i class='bx bxs-user-circle'></i> 
+                                <span>Perfil</span>
+                            </a>
+                        </li>
+                        <li class="navbar__profile-item">
+                            <a href="#" class="navbar__profile-link">
+                                <i class='bx bxs-cog'></i> 
+                                <span>Configuración</span>
+                            </a>
+                        </li>
+                        <li class="navbar__profile-item">
+                            <a href="/index.html" class="navbar__profile-link">
+                                <i class='bx bx-log-out'></i> 
+                                <span>Cerrar Sesión</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- FIN NAVBAR -->
+
+        <main>
+            <div class="critical-route">
+                <div class="critical-route__form-container">
+                    <h2 class="critical-route__title">Registrar Ruta Crítica</h2>
+                    <form class="critical-route__form" autocomplete="off">
+                        <div class="critical-route__field">
+                            <label class="critical-route__label" for="departamento">Departamento:</label>
+                            <select class="critical-route__select" id="departamento" name="departamento" required>
+                                <option value="">Seleccione un departamento</option>
+                                <option value="Nueva Segovia">Nueva Segovia</option>
+                                <option value="Madriz">Madriz</option>
+                                <option value="Estelí">Estelí</option>
+                                <option value="Chinandega">Chinandega</option>
+                                <option value="León">León</option>
+                                <option value="Managua">Managua</option>
+                                <option value="Masaya">Masaya</option>
+                                <option value="Carazo">Carazo</option>
+                                <option value="Granada">Granada</option>
+                                <option value="Rivas">Rivas</option>
+                                <option value="Boaco">Boaco</option>
+                                <option value="Chontales">Chontales</option>
+                                <option value="Jinotega">Jinotega</option>
+                                <option value="Matagalpa">Matagalpa</option>
+                                <option value="Río San Juan">Río San Juan</option>
+                                <option value="REGIÓN AUTÓNOMA DE LA COSTA CARIBE NORTE">REGIÓN AUTÓNOMA DE LA COSTA CARIBE NORTE</option>
+                                <option value="REGIÓN AUTÓNOMA DE LA COSTA CARIBE SUR">REGIÓN AUTÓNOMA DE LA COSTA CARIBE SUR</option>
+                            </select>
+                            <div class="critical-route__error" id="departamentoError"></div>
+                        </div>
+                        <div class="critical-route__field">
+                            <label class="critical-route__label" for="municipio">Municipio:</label>
+                            <select class="critical-route__select" id="municipio" name="municipio" required>
+                                <option value="">Seleccione un municipio</option>
+                            </select>
+                            <div class="critical-route__error" id="municipioError"></div>
+                        </div>
+                        <div class="critical-route__field">
+                            <label class="critical-route__label" for="nivel_ruta">Nivel de Ruta:</label>
+                            <select class="critical-route__select" id="nivel_ruta" name="nivel_ruta" required>
+                                <option value="">Seleccione un nivel de ruta</option>
+                                <option value="baja">Baja</option>
+                                <option value="media">Media</option>
+                                <option value="alta">Alta</option>
+                            </select>
+                            <div class="critical-route__error" id="nivelRutaError"></div>
+                        </div>
+                        <div class="critical-route__field">
+                            <label class="critical-route__label" for="codigo_ruta">Código de Ruta Crítica:</label>
+                            <input class="critical-route__input" type="text" id="codigo_ruta" name="codigo_ruta" required>
+                            <div class="critical-route__error" id="codigoRutaError"></div>
+                        </div>
+                        <div class="critical-route__field">
+                            <label class="critical-route__label" for="descripcion">Descripción:</label>
+                            <textarea class="critical-route__textarea" id="descripcion" name="descripcion" rows="4" required></textarea>
+                            <div class="critical-route__error" id="descripcionError"></div>
+                        </div>
+                        <button class="critical-route__button" type="button" id="registerButton">Registrar</button>
+                    </form>
+                </div>
+                <div class="critical-route__table-container">
+                    <table class="critical-route__table">
+                        <thead class="critical-route__table-header">
+                            <tr>
+                                <th class="critical-route__table-cell critical-route__table-cell--header">Departamento</th>
+                                <th class="critical-route__table-cell critical-route__table-cell--header">Municipio</th>
+                                <th class="critical-route__table-cell critical-route__table-cell--header">Nivel de Ruta</th>
+                                <th class="critical-route__table-cell critical-route__table-cell--header">Código de Ruta</th>
+                                <th class="critical-route__table-cell critical-route__table-cell--header">Descripción</th>
+                                <th class="critical-route__table-cell critical-route__table-cell--header">Editar</th>
+                                <th class="critical-route__table-cell critical-route__table-cell--header">Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <br>
+            <br>
+            &copy; Derechos de autor reservados - Save The Animals 2025
+        </footer>
+    </section>
+
+    <script src="RutaCriticaScript.js"></script>
+</body>
+</html>

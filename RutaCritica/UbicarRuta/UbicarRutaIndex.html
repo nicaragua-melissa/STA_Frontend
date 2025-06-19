@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ubicar Ruta Crítica - Save The Animals</title>
+    <link rel="stylesheet" href="UbicarRutaStyles.css">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body class="page">
+    <div id="menuOverlay"></div>
+    <!-- MENU LATERAL IZQUIERDO -->
+    <section class="sidebar" id="menuLateral">
+        <a href="/index.html" class="sidebar__brand">
+            <img src="../../recursos/Logo STA sin fondo.png" class="sidebar__logo" alt="Logo STA">
+            <span class="sidebar__title">Save The Animals</span>
+        </a>
+        <ul class="sidebar__menu">
+            <li class="sidebar__item">
+                <a href="/Informate/Informate.html" class="sidebar__link">
+                    <i class='bx bxs-book-bookmark sidebar__icon'></i>
+                    <span class="sidebar__text">Infórmate</span>
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="/Denunciar/Denunciar.html" class="sidebar__link">
+                    <i class='bx bxs-file-find sidebar__icon'></i>
+                    <span class="sidebar__text">Denunciar</span>
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="/dashboard.html" class="sidebar__link">
+                    <i class='bx bxs-dashboard sidebar__icon'></i>
+                    <span class="sidebar__text">Dashboard</span>
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="../RutaCriticaIndex.html" class="sidebar__link">
+                    <i class='bx bxs-traffic-cone sidebar__icon'></i>
+                    <span class="sidebar__text">Rutas Críticas</span>
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="UbicarRutaIndex.html" class="sidebar__link sidebar__link--active">
+                    <i class='bx bx-map sidebar__icon'></i>
+                    <span class="sidebar__text">Ubicar Ruta</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <section class="main-content" id="content">
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <i class='bx bx-menu navbar__toggle-sidebar' id="toggleSidebar" aria-label="Abrir menú"></i>
+            <form class="navbar__form" action="#">
+                <div class="navbar__form-group">
+                    <input id="searchInput" class="navbar__form-group-input" type="text" placeholder="Buscar...">
+                    <i class='bx bx-search navbar__form-group-icon'></i>
+                </div>
+            </form>
+            <div class="navbar__right">
+                <a href="#" class="navbar__link">
+                    <i class='bx bxs-bell navbar__link-icon'></i>
+                    <span class="navbar__link-badge">500</span>
+                </a>
+                <div class="navbar__profile" tabindex="0">
+                    <i class='bx bxs-user-circle navbar__profile-img'></i>
+                    <ul class="navbar__profile-menu">
+                        <li class="navbar__profile-item">
+                            <a href="#" class="navbar__profile-link">
+                                <i class='bx bxs-user-circle'></i> 
+                                <span>Perfil</span>
+                            </a>
+                        </li>
+                        <li class="navbar__profile-item">
+                            <a href="#" class="navbar__profile-link">
+                                <i class='bx bxs-cog'></i> 
+                                <span>Configuración</span>
+                            </a>
+                        </li>
+                        <li class="navbar__profile-item">
+                            <a href="/index.html" class="navbar__profile-link">
+                                <i class='bx bx-log-out'></i> 
+                                <span>Cerrar Sesión</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- FIN NAVBAR -->
+
+        <main>
+            <div class="critical-route">
+                <div class="critical-route__form-container">
+                    <h2 class="critical-route__title">Localizar Ruta Crítica</h2>
+                    <form class="critical-route__form" id="mapSearchForm">
+                        <div class="critical-route__field">
+                            <label class="critical-route__label" for="mapSearchInput">Buscar coordenadas:</label>
+                            <div style="display: flex; gap: 0.5rem;">
+                                <input type="text" id="mapSearchInput" class="critical-route__input" placeholder="Ej: 12.1365,-86.2514" />
+                                <button type="submit" class="critical-route__button" style="width:auto;">
+                                    <i class='bx bx-search'></i> Buscar
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="critical-route__map-container" style="margin: 2rem 0;">
+                        <div id="map" class="critical-route__map" style="height: 350px; border-radius: 1rem; box-shadow: 0 2px 16px rgba(55,150,52,0.07);"></div>
+                    </div>
+                    <h2 class="critical-route__title">Registros de Coordenadas</h2>
+                    <button id="clearAllBtn" class="critical-route__button critical-route__button--delete" type="button" style="width:auto; margin-bottom: 1rem;">
+                        <i class='bx bxs-trash'></i> Borrar Todas
+                    </button>
+                    <div class="critical-route__table-container">
+                        <table class="critical-route__table" id="coordinatesTable">
+                            <thead class="critical-route__table-header">
+                                <tr>
+                                    <th class="critical-route__table-cell critical-route__table-cell--header">Latitud</th>
+                                    <th class="critical-route__table-cell critical-route__table-cell--header">Longitud</th>
+                                    <th class="critical-route__table-cell critical-route__table-cell--header">Editar</th>
+                                    <th class="critical-route__table-cell critical-route__table-cell--header">Eliminar</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <br>
+            <br>
+            &copy; Derechos de autor reservados - Save The Animals 2025
+        </footer>
+    </section>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="UbicarRutaScript.js"></script>
+</body>
+</html>

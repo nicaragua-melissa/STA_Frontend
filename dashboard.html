@@ -1,260 +1,256 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--libreria de iconos-->
+    <!-- Librería de iconos -->
     <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <!-- Leaflet CSS para el mapa -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="dashboard.css">
-    <title>STA Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Save the Animals Dashboard</title>
 </head>
-
 <body>
-    <!-- <div class="menu">
-        <h2>Save the Animals Dashboard</h2>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#estadisticas">Información y Estadísticas</a></li>
-            <li><a href="#denuncias">Denuncias Registradas</a></li>
-            <li><a href="#camaras">Cámaras de Seguridad</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </div> -->
-    <!-- Aqui comienza el MENU LATERAL IZQUIERDO -->
-    <section id="menuLateral">
-        <!-- TITULO DE LA APLICACION WEB -->
-        <a href="/index.html" class="menuLateral__brand"><img src="/recursos/Logo STA sin fondo.png"> Save The
-            Animals</a>
-        <!-- Lista Desordenada de las opciones del menu lateral -->
+    <!-- Menu Lateral Izquierdo -->
+    <div id="menuLateral">
+        <div class="menuLateral__brand">
+            <img src="/recursos/Logo STA sin fondo.png" alt="Logo">
+            <span>Save the Animals</span>
+        </div>
+        
         <ul class="menuLateral__side-menu">
-            <!--Título par las operaciones del sistema-->
-            <li class="menuLateral__divisor" data-text="OPERACIONES">OPERACIONES
-
+            <li>
+                <a href="/Inicio/Inicio.html" class="active">
+                    <i class='bxr  bxs-home-alt-2 menuLateral__icon'></i>
+                    <span>Inicio</span>
+                </a>
             </li>
-            <div class="menu-comun">
-                <li><a href="/Inicio/Inicio.html"><i class='bxr  bxs-home-alt-2 menuLateral__icon'></i> Inicio</a></li>
-                <li>
-                    <a href="/Informate/Informate.html">
-                        <i class='bxr bxs-book-library menuLateral__icon'></i>Infórmate
-                    </a>
-                    
-                </li>
-                <li><a href="/Denunciar/Denunciar.html"><i class='bxr bxs-file-report menuLateral__icon'></i>
-                        Denunciar</a></li>
-            </div>
-            <!-- Opción exclusiva del ADMIN -->
-            <div class="menu-admin">
-                <li>
-                    <a href="#">
-                        <i class='bx bxs-dashboard menuLateral__icon'></i> Dashboard
-                        <i class='bx bx-chevron-right menuLateral__icon--right'></i>
-                    </a>
-                    <ul class="menuLateral__side-dropdown">
-                        <li><a href="#titleEstadistica" id="estadistica">📊 Estadísticas</a></li>
-                        <li><a href="#titleDenuncias">📝 Denuncias Registradas</a></li>
-                    </ul>
-                </li>
-                <li><a href="rutaCritica/rutaCritica.html">
-                        <i class='bxr bxs-alert-triangle menuLateral__icon'></i> Rutas Críticas
-                    </a></li>
-            </div>
+            <li>
+                <a href="#estadisticas">
+                    <i class='bx bx-bar-chart-alt-2 menuLateral__icon'></i>
+                    <span>Estadísticas</span>
+                </a>
+            </li>
+            <li>
+                <a href="/Denunciar/Denunciar.html">
+                    <i class='bxr bxs-file-report menuLateral__icon'></i>
+                    <span>Denuncias</span>
+                </a>
+            </li>
+            <li>
+                <a href="#contacto">
+                    <i class='bx bx-envelope menuLateral__icon'></i>
+                    <span>Contacto</span>
+                </a>
+            </li>
         </ul>
+    </div>
 
-    </section>
-    <!-- Aqui termina la barra lateral izquierda -->
+    <!-- Contenido Principal -->
+    <div id="content">
+       <!-- Barra de Navegación -->
+<nav>
+    <div class="nav__toggle-sidebar">
+        <i class='bx bx-menu'></i>
+    </div>
+    
+    <div class="nav__form">
+        <div class="nav__form-group">
+            <input type="text" class="nav__form-group--input" placeholder="Buscar...">
+            <i class='bx bx-search nav__form-group--icon'></i>
+        </div>
+    </div>
+    
+    <div class="nav__right-elements">
+        <div class="nav__link">
+            <i class='bx bx-bell nav__link-icon'></i>
+            <span class="nav__link-badge">3</span>
+        </div>
+        
+        <div class="nav__link">
+            <i class='bx bx-envelope nav__link-icon'></i>
+            <span class="nav__link-badge">2</span>
+        </div>
+        
+        <div class="nav__divider"></div>
+        
+        <div class="nav__profile">
+            <img src="/recursos/profile.png" alt="Profile" class="nav__profile-img">
+        </div>
+    </div>
+</nav>
 
-    <section id="content">
-        <!--Aqui empieza el header-->
-        <nav>
-            <i class='bxr bxs-menu nav__toggle-sidebar' alt="Menu" name="menu"></i>
-            <!--Formulario de Busqueda-->
-            <form class="nav__form" action="#">
-                <div class="nav__form-group">
-                    <input id="searchInput" class="nav__form-group--input" type="text" placeholder="Buscar...">
-                    <i class='bx bx-search nav__form-group--icon'></i>
-                </div>
-            </form>
-            <!--Icono de campana de notificacion-->
-            <a href="#" class="nav__link">
-                <i class='bx bxs-bell nav__link-icon'></i>
-                <span class="nav__link-badge">500</span>
-            </a>
-            <!--Icono de notificaciones de mensajes-->
-            <!-- <a href="#" class="nav__link">
-				<i class='bx bxs-message-square-dots nav__link-icon'></i>
-				<span class="nav__link-badge">1000</span>
-			</a> -->
-
-            <span class="nav__divider"></span>
-            <!--Foto de perfil del usuario que inicio sesion en el sistema-->
-            <div class="nav__profile">
-                <img src="/recursos/profile.png" class="nav__profile-img">
-                <ul class="nav__profile-link">
-                    <li><a href="#"><i class='bx bxs-user-circle nav__link-icon'></i> Perfil</a></li>
-                    <li><a href="#"><i class='bx bxs-cog'></i> Configuracion</a></li>
-                    <li><a href="/index.html"><i class='bxr  bxs-arrow-out-left-square-half'></i> Cerrar Sesion</a></li>
-                </ul>
-            </div>
-        </nav>
-        <!-- AQUI TERMINA LA BARRA DE NAVEGACION -->
-
-        <!--Aqui empieza el contenido principal-->
+        <!-- Contenido del Dashboard -->
         <main>
             <!-- Encabezado -->
             <div class="div__encabezado">
-                <h1>Panel de Control STA</h1>
+                <h1>Dashboard de Tráfico de Animales</h1>
+                <p class="div__encabezado-p">Sistema de monitoreo y control de tráfico ilegal de animales en áreas protegidas de Nicaragua</p>
             </div>
-            <p class="div__encabezado-p">Monitoreo del tráfico ilegal de animales y supervisión de áreas protegidas.</p>
 
-            <!-- Sección de Estadísticas -->
-            <section class="section-estadisticas" id="estadisticas">
-                <div class="contenedor-cuadros">
-                    <h2 id="titleEstadistica">Estadísticas Resumidas</h2>
-                    
-                    <div class="cuadro" id="denuncias-card">
-                        <img src="/recursos/denunciante.png" alt="Denuncias">
-                        <p>Denuncias Registradas</p>
-                        <h3 id="denuncias-count">25</h3>
-                        <div class="trend-indicator positive">+12% este mes</div>
+            <!-- Estadísticas -->
+            <div id="estadisticas" class="contenedor-cuadros">
+                <div class="cuadro">
+                    <img src="/recursos/denunciante.png" alt="Denuncias">
+                    <div>
+                        <h3 id="total-denuncias">143</h3>
+                        <p>Total Denuncias</p>
                     </div>
-                    
-                    <div class="cuadro" id="camaras-card">
-                        <img src="/recursos/camara-de-seguridad.png" alt="Cámaras">
-                        <p>Cámaras Activas</p>
-                        <h3 id="camaras-count">10</h3>
-                        <div class="trend-indicator positive">100% operativas</div>
+                </div>
+                
+                <div class="cuadro">
+                    <img src="/recursos/pendiente.png" alt="Pendientes">
+                    <div>
+                        <h3 id="denuncias-pendientes">28</h3>
+                        <p>Pendientes</p>
                     </div>
-                    
-                    <div class="cuadro" id="areas-card">
-                        <img src="/recursos/ubicacion-de-la-direccion.png" alt="Áreas">
+                </div>
+                
+                <div class="cuadro">
+                    <img src="/recursos/ubicacion-de-la-direccion.png" alt="Áreas">
+                    <div>
+                        <h3 id="areas-monitoreadas">15</h3>
                         <p>Áreas Monitoreadas</p>
-                        <h3 id="areas-count">5</h3>
-                        <div class="trend-indicator neutral">Sin cambios</div>
                     </div>
-                    
-                    <div class="cuadro" id="resoluciones-card">
-                        <img src="/recursos/check-circle.png" alt="Resoluciones">
+                </div>
+                
+                <div class="cuadro">
+                    <img src="/recursos/resuelto.png" alt="Resueltos">
+                    <div>
+                        <h3 id="casos-resueltos">115</h3>
                         <p>Casos Resueltos</p>
-                        <h3 id="resoluciones-count">18</h3>
-                        <div class="trend-indicator positive">+8% este mes</div>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <!-- Sección de Denuncias -->
-            <section class="section-denuncias" id="denuncias" style="display: none;">
-                <div class="contenedor-cuadros">
-                    <h2 id="titleDenuncias">Denuncias Registradas</h2>
-                    <div class="tabla-denuncias">
-                        <table>
-                            <thead class="tablaHeader">
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Fecha</th>
-                                    <th>Ubicación</th>
-                                    <th>Tipo</th>
-                                    <th>Estado</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>#001</td>
-                                    <td>15/01/2025</td>
-                                    <td>Reserva Natural X</td>
-                                    <td>Caza Ilegal</td>
-                                    <td><span class="estado-badge pendiente">Pendiente</span></td>
-                                    <td>
-                                        <button class="btn-accion">Ver</button>
-                                        <button class="btn-accion">Editar</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#002</td>
-                                    <td>14/01/2025</td>
-                                    <td>Parque Nacional Y</td>
-                                    <td>Tráfico</td>
-                                    <td><span class="estado-badge en-proceso">En Proceso</span></td>
-                                    <td>
-                                        <button class="btn-accion">Ver</button>
-                                        <button class="btn-accion">Editar</button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>#003</td>
-                                    <td>13/01/2025</td>
-                                    <td>Área Protegida Z</td>
-                                    <td>Destrucción</td>
-                                    <td><span class="estado-badge resuelto">Resuelto</span></td>
-                                    <td>
-                                        <button class="btn-accion">Ver</button>
-                                        <button class="btn-accion">Editar</button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+            <!-- Gráficos -->
+            <div class="primeras-graficas">
+                <div class="cuadroGrafica">
+                    <h2>Denuncias por Mes</h2>
+                    <canvas id="denunciasChart"></canvas>
                 </div>
-            </section>
-
-            <!-- Sección de Cámaras -->
-            <section class="section-camaras">
-                <div class="contenedor-cuadros">
-                    <h2>Estado de Cámaras</h2>
-                    <div class="camara-estado">
-                        <div class="camara">
-                            <div class="estado activa"></div>
-                            <span>Cámara 1 - Entrada Principal</span>
-                        </div>
-                        <div class="camara">
-                            <div class="estado activa"></div>
-                            <span>Cámara 2 - Zona de Monitoreo</span>
-                        </div>
-                        <div class="camara">
-                            <div class="estado inactiva"></div>
-                            <span>Cámara 3 - Área Remota</span>
-                        </div>
-                        <div class="camara">
-                            <div class="estado mantenimiento"></div>
-                            <span>Cámara 4 - Punto de Control</span>
-                        </div>
-                    </div>
-                    
-                    <div class="mapa-container">
-                        <h3>Mapa de Ubicaciones</h3>
-                        <div class="mapa">
-                            <img src="/recursos/mapa-area.png" alt="Mapa del área">
-                            <div class="camara-ubicacion1">📹</div>
-                            <div class="camara-ubicacion2">📹</div>
-                            <div class="camara-ubicacion3">📹</div>
-                        </div>
-                    </div>
+                
+                <div class="cuadroGrafica">
+                    <h2>Estados de Denuncias</h2>
+                    <canvas id="estadosChart"></canvas>
                 </div>
-            </section>
+            </div>
 
-            <!-- Sección de Contacto -->
-            <section id="contacto">
+            <div class="segundas-graficas">
+                <div class="cuadroGrafica">
+                    <h2>Tendencias Anuales</h2>
+                    <canvas id="tendenciasChart"></canvas>
+                </div>
+                
+                <div class="cuadroGrafica">
+                    <h2>Incidentes por Área Protegida</h2>
+                    <canvas id="areasChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Mapa -->
+            <div class="mapa-container">
+                <div class="cuadroGrafica">
+                    <h2>Mapa de Áreas Protegidas</h2>
+                    <div id="map" style="width: 100%; height: 400px; border-radius: 8px;"></div>
+                </div>
+            </div>
+
+            <!-- Tabla de Denuncias -->
+<div class="tabla-denuncias">
+    <h2>Denuncias Recientes</h2>
+    <div class="tabla-container">
+        <table class="tabla-moderna">
+            <thead class="tablaHeader">
+                <tr>
+                    <th>Código</th>
+                    <th>Descripción Persona</th>
+                    <th>Descripción Hechos</th>
+                    <th>Dirección (hechos)</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>#001</td>
+                    <td>Persona desconocida con camisa roja</td>
+                    <td>Caza ilegal de especies protegidas</td>
+                    <td>Bosawás, Zona Norte</td>
+                    <td>2024-01-15</td>
+                </tr>
+                <tr>
+                    <td>#002</td>
+                    <td>Grupo de 3 personas en vehículo blanco</td>
+                    <td>Tráfico de animales exóticos</td>
+                    <td>Indio Maíz, Carretera Principal</td>
+                    <td>2024-01-14</td>
+                </tr>
+                <tr>
+                    <td>#003</td>
+                    <td>Persona sola con mochila grande</td>
+                    <td>Actividad sospechosa en área protegida</td>
+                    <td>Volcán Mombacho, Sendero Central</td>
+                    <td>2024-01-13</td>
+                </tr>
+                <tr>
+                    <td>#004</td>
+                    <td>Dos personas en motocicleta</td>
+                    <td>Captura de aves silvestres</td>
+                    <td>Volcán Masaya, Mirador</td>
+                    <td>2024-01-12</td>
+                </tr>
+                <tr>
+                    <td>#005</td>
+                    <td>Grupo de pescadores no autorizados</td>
+                    <td>Pesca ilegal en reserva natural</td>
+                    <td>Isla de Ometepe, Lago Cocibolca</td>
+                    <td>2024-01-11</td>
+                </tr>
+                <tr>
+                    <td>#006</td>
+                    <td>Persona con equipos de caza</td>
+                    <td>Intento de caza de venados</td>
+                    <td>Reserva Natural Cerro Silva</td>
+                    <td>2024-01-10</td>
+                </tr>
+                <tr>
+                    <td>#007</td>
+                    <td>Vehículo sospechoso con jaulas</td>
+                    <td>Transporte de animales sin autorización</td>
+                    <td>Carretera a San Carlos</td>
+                    <td>2024-01-09</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+            <!-- Contacto -->
+            <div id="contacto">
                 <h2>Información de Contacto</h2>
                 <p><strong>Email:</strong> <a href="mailto:info@savetheanimals.org">info@savetheanimals.org</a></p>
                 <p><strong>Teléfono:</strong> <a href="tel:+50512345678">+505 1234-5678</a></p>
                 <p><strong>Dirección:</strong> Managua, Nicaragua</p>
-                <p><strong>Horario de Atención:</strong> Lunes a Viernes 8:00 AM - 6:00 PM</p>
-            </section>
-
+                <p><strong>Horario:</strong> Lunes a Viernes 8:00 AM - 6:00 PM</p>
+            </div>
         </main>
 
-        <footer class="pie">
-            <br>
-            <br>
-            &copy Derechos de autor reservados - Save The Animals 2025
-        </footer>
+        <!-- Pie de Página -->
+        <div class="pie">
+            <p>&copy; 2024 Save the Animals Dashboard. Todos los derechos reservados.</p>
+            <p>Sistema de monitoreo de tráfico ilegal de animales en Nicaragua</p>
+        </div>
+    </div>
 
-    </section>
-
-    <script src="/dashboard.js"></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Script principal -->
+    <script src="dashboard.js"></script>
     <script src="/Login/auth.js"></script>
-
 </body>
-
 </html>

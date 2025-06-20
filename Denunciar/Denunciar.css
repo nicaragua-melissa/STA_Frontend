@@ -20,7 +20,7 @@ html {
 } 
  
 body {
-	background: var(--light);
+	background: var(--l)var(--timberwolf)
 }
 
 a {

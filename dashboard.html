@@ -33,6 +33,7 @@
 
             </li>
             <div class="menu-comun">
+                <li><a href="/Inicio/Inicio.html"><i class='bxr  bxs-home-alt-2 menuLateral__icon'></i> Inicio</a></li>
                 <li>
                     <a href="/Informate/Informate.html">
                         <i class='bxr bxs-book-library menuLateral__icon'></i>Infórmate
@@ -50,8 +51,8 @@
                         <i class='bx bx-chevron-right menuLateral__icon--right'></i>
                     </a>
                     <ul class="menuLateral__side-dropdown">
-                        <li><a href="#" id="estadistica">📊 Estadísticas</a></li>
-                        <li><a href="#">📝 Denuncias Registradas</a></li>
+                        <li><a href="#titleEstadistica" id="estadistica">📊 Estadísticas</a></li>
+                        <li><a href="#titleDenuncias">📝 Denuncias Registradas</a></li>
                     </ul>
                 </li>
                 <li><a href="rutaCritica/rutaCritica.html">
@@ -100,156 +101,145 @@
 
         <!--Aqui empieza el contenido principal-->
         <main>
+            <!-- Encabezado -->
             <div class="div__encabezado">
-                <h1> | Bienvenido al Dashboard</h1>
+                <h1>Panel de Control STA</h1>
             </div>
             <p class="div__encabezado-p">Monitoreo del tráfico ilegal de animales y supervisión de áreas protegidas.</p>
 
-            <!--SECCION DE ESTADISTICAS-->
+            <!-- Sección de Estadísticas -->
             <section class="section-estadisticas" id="estadisticas">
                 <div class="contenedor-cuadros">
-                    <h2>Estadísticas Resumidas</h2>
-                    <div class="cuadro">
-                        <img src="/recursos/denunciante.png" alt="denuncias">
+                    <h2 id="titleEstadistica">Estadísticas Resumidas</h2>
+                    
+                    <div class="cuadro" id="denuncias-card">
+                        <img src="/recursos/denunciante.png" alt="Denuncias">
                         <p>Denuncias Registradas</p>
-                        <h3>25</h3>
+                        <h3 id="denuncias-count">25</h3>
+                        <div class="trend-indicator positive">+12% este mes</div>
                     </div>
-                    <div class="cuadro">
-                        <img src="/recursos/camara-de-seguridad.png" alt="camaras">
+                    
+                    <div class="cuadro" id="camaras-card">
+                        <img src="/recursos/camara-de-seguridad.png" alt="Cámaras">
                         <p>Cámaras Activas</p>
-                        <h3>10</h3>
+                        <h3 id="camaras-count">10</h3>
+                        <div class="trend-indicator positive">100% operativas</div>
                     </div>
-                    <div class="cuadro">
-                        <img src="/recursos/ubicacion-de-la-direccion.png" alt="areas">
+                    
+                    <div class="cuadro" id="areas-card">
+                        <img src="/recursos/ubicacion-de-la-direccion.png" alt="Áreas">
                         <p>Áreas Monitoreadas</p>
-                        <h3>5</h3>
+                        <h3 id="areas-count">5</h3>
+                        <div class="trend-indicator neutral">Sin cambios</div>
+                    </div>
+                    
+                    <div class="cuadro" id="resoluciones-card">
+                        <img src="/recursos/check-circle.png" alt="Resoluciones">
+                        <p>Casos Resueltos</p>
+                        <h3 id="resoluciones-count">18</h3>
+                        <div class="trend-indicator positive">+8% este mes</div>
                     </div>
                 </div>
+            </section>
 
-                <div class="primeras-graficas">
-                    <div class="cuadroGrafica">
-                        <p><b>Comparativa de Valores por Categoría</b></p>
-                        <img src="/recursos/gráfica-barra.jpg" alt="Gráfico de barras">
+            <!-- Sección de Denuncias -->
+            <section class="section-denuncias" id="denuncias" style="display: none;">
+                <div class="contenedor-cuadros">
+                    <h2 id="titleDenuncias">Denuncias Registradas</h2>
+                    <div class="tabla-denuncias">
+                        <table>
+                            <thead class="tablaHeader">
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Fecha</th>
+                                    <th>Ubicación</th>
+                                    <th>Tipo</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#001</td>
+                                    <td>15/01/2025</td>
+                                    <td>Reserva Natural X</td>
+                                    <td>Caza Ilegal</td>
+                                    <td><span class="estado-badge pendiente">Pendiente</span></td>
+                                    <td>
+                                        <button class="btn-accion">Ver</button>
+                                        <button class="btn-accion">Editar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#002</td>
+                                    <td>14/01/2025</td>
+                                    <td>Parque Nacional Y</td>
+                                    <td>Tráfico</td>
+                                    <td><span class="estado-badge en-proceso">En Proceso</span></td>
+                                    <td>
+                                        <button class="btn-accion">Ver</button>
+                                        <button class="btn-accion">Editar</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#003</td>
+                                    <td>13/01/2025</td>
+                                    <td>Área Protegida Z</td>
+                                    <td>Destrucción</td>
+                                    <td><span class="estado-badge resuelto">Resuelto</span></td>
+                                    <td>
+                                        <button class="btn-accion">Ver</button>
+                                        <button class="btn-accion">Editar</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="cuadroGrafica">
-                        <p><b>Porcentaje de Cumplimiento</b></p>
-                        <img src="/recursos/gráfica-circulo1.jpg" alt="Gráfico de circulo">
-                    </div>
-                    <div class="cuadroGrafica">
-                        <p><b>Análisis de Datos por segmento</b></p>
-                        <img src="/recursos/gráfica-horizontal.jpg" alt="Gráfico de barras horizontal">
-                    </div>
-                    <div class="segundas-graficas">
-                        <div class="cuadroGrafica">
-                            <p><b>Indicadores de Avance</b></p>
-                            <img src="/recursos/gráfica-circulo2.jpg" alt="Gráfico de circulo">
+                </div>
+            </section>
+
+            <!-- Sección de Cámaras -->
+            <section class="section-camaras">
+                <div class="contenedor-cuadros">
+                    <h2>Estado de Cámaras</h2>
+                    <div class="camara-estado">
+                        <div class="camara">
+                            <div class="estado activa"></div>
+                            <span>Cámara 1 - Entrada Principal</span>
                         </div>
-                        <div class="cuadroGrafica">
-                            <p><b>Tendencias en Áreas</b></p>
-                            <img src="/recursos/gráfica-triangulo.jpg" alt="Gráfico de triángulos">
+                        <div class="camara">
+                            <div class="estado activa"></div>
+                            <span>Cámara 2 - Zona de Monitoreo</span>
                         </div>
-                        <div class="cuadroGrafica">
-                            <p><b>Distribución de porcentajes</b></p>
-                            <img src="/recursos/gráfica-pastel.jpg" alt="Gráfico de pastel">
+                        <div class="camara">
+                            <div class="estado inactiva"></div>
+                            <span>Cámara 3 - Área Remota</span>
+                        </div>
+                        <div class="camara">
+                            <div class="estado mantenimiento"></div>
+                            <span>Cámara 4 - Punto de Control</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mapa-container">
+                        <h3>Mapa de Ubicaciones</h3>
+                        <div class="mapa">
+                            <img src="/recursos/mapa-area.png" alt="Mapa del área">
+                            <div class="camara-ubicacion1">📹</div>
+                            <div class="camara-ubicacion2">📹</div>
+                            <div class="camara-ubicacion3">📹</div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!--Seccion de registros de denuncias-->
-            <section class="tabla-denuncias" id="denuncias">
-                <h2>Últimos Reportes</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th> Código </th>
-                            <th> Descripción Persona </th>
-                            <th> Descripción Hechos </th>
-                            <th> Dirección (hechos) </th>
-                            <th> Fecha </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td> STA01 </td>
-                            <td> Hombre de aproximadamente 40 años, tez morena, cabello corto, vestimenta oscura. </td>
-                            <td> Se observó transportando loros y monos en jaulas dentro de un vehículo sin
-                                identificación. </td>
-                            <td> Mercado Oriental, Managua </td>
-                            <td> 2025-04-27 </td>
-                        </tr>
-                        <tr>
-                            <td> STA02 </td>
-                            <td> Grupo de tres personas, dos hombres y una mujer, con mochilas grandes y actitud
-                                sospechosa. </td>
-                            <td> Se detectó la venta de tucanes y lapas en un puesto improvisado. </td>
-                            <td> Carretera hacia Bluefields </td>
-                            <td> 2025-04-26 </td>
-                        </tr>
-                        <tr>
-                            <td> STA03 </td>
-                            <td> Hombre joven, delgado, con tatuajes visibles en brazos. </td>
-                            <td> Se vio capturando iguanas y serpientes cerca de una reserva natural. </td>
-                            <td> Reserva Biológica Indio Maíz </td>
-                            <td> 2025-04-25 </td>
-                        </tr>
-                        <tr>
-                            <td> STA04 </td>
-                            <td> Mujer de mediana edad, cabello largo, vestimenta colorida. </td>
-                            <td> Se reportó ofreciendo animales exóticos a turistas en la playa. </td>
-                            <td> San Juan Del sur </td>
-                            <td> 2025-04-24 </td>
-                        </tr>
-                        <tr>
-                            <td> STA05 </td>
-                            <td> Hombre robusto, con barba y gorra, acompañado de otro individuo </td>
-                            <td> Se observó trasladando cajas con aves en motocicletas sin placas. </td>
-                            <td> Frontera con Honduras, punto ciego</td>
-                            <td> 2025-04-23 </td>
-                        </tr>
-                    </tbody>
-
-                </table>
-
-            </section>
-
-
-            <!--Seccion Rutas Criticas-->
-            <section class="section-camaras" id="camaras">
-                <h2>Cámaras de Seguridad</h2>
-                <div class="camara-estado">
-                    <div class="camara">
-                        <span class="estado activa"></span>
-                        <p>Cámara 1 - Activa</p>
-                    </div>
-                    <div class="camara">
-                        <span class="estado inactiva"></span>
-                        <p>Cámara 2 - Inactiva</p>
-                    </div>
-                    <div class="camara">
-                        <span class="estado mantenimiento"></span>
-                        <p>Cámara 3 - Mantenimiento</p>
-                    </div>
-                </div>
-                <div class="mapa-container">
-                    <h3>Ubicación de Cámaras</h3>
-                    <div class="mapa">
-                        <img src="/recursos/mapa-rutas.jpg" alt="Mapa">
-                        <span class="camara-ubicacion1">📍</span>
-                        <span class="camara-ubicacion2">📍</span>
-                        <span class="camara-ubicacion3">📍</span>
-                    </div>
-                </div>
-            </section>
-
-
-            <!--SECCION CONTACTO-->
+            <!-- Sección de Contacto -->
             <section id="contacto">
-                <h2>Contacto</h2>
-                <p>Para ayuda o consultas, envíanos un correo a:
-                    <a
-                        href="https://mail.google.com/mail/u/0/#inbox?compose=jrjtWvNPPQcPqzrRFFjFHPrNtcdcTqJsTDqvmRshtCJPKWgGRppcBMxHSpBQXHzLgdQxcQrS">savetheanimals@gmail.com</a>
-                </p>
+                <h2>Información de Contacto</h2>
+                <p><strong>Email:</strong> <a href="mailto:info@savetheanimals.org">info@savetheanimals.org</a></p>
+                <p><strong>Teléfono:</strong> <a href="tel:+50512345678">+505 1234-5678</a></p>
+                <p><strong>Dirección:</strong> Managua, Nicaragua</p>
+                <p><strong>Horario de Atención:</strong> Lunes a Viernes 8:00 AM - 6:00 PM</p>
             </section>
 
         </main>

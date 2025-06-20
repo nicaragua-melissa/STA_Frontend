@@ -43,6 +43,30 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const track = document.getElementById("track");
+    const prevButton = document.getElementById("button-prev");
+    const nextButton = document.getElementById("button-next");
+
+    const itemWidth = document.querySelector(".carousel-item").offsetWidth;
+    let position = 0;
+
+    nextButton.addEventListener("click", () => {
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        if (position < maxScroll) {
+            position += itemWidth + 15; // 15px es el espacio entre imágenes
+            track.style.transform = `translateX(-${position}px)`;
+        }
+    });
+
+    prevButton.addEventListener("click", () => {
+        if (position > 0) {
+            position -= itemWidth + 15;
+            track.style.transform = `translateX(-${position}px)`;
+        }
+    });
+});
+
 
 // Obtener el modal
 var modal = document.getElementById('modalIniciarSesion');

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--libreria de iconos-->
+	<link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+	<!--Referencia al estilo del sitio-->
+	<link rel="stylesheet" href="./Informate.css">
+    <title>Inicio</title>
+</head>
+<body>
+
+    <!-- Aqui comienza el MENU LATERAL IZQUIERDO -->
+	<section id="menuLateral">
+		<!-- TITULO DE LA APLICACION WEB -->
+		<a href="/index.html" class="menuLateral__brand"><img src="/recursos/Logo STA sin fondo.png">  Save The Animals</a>
+		<!-- Lista Desordenada de las opciones del menu lateral -->
+		<ul class="menuLateral__side-menu">
+			<!--Título par las operaciones del sistema-->
+			<li class="menuLateral__divisor" data-text="OPERACIONES">OPERACIONES
+
+			</li>
+				<div class="menu-comun">
+					<li>
+					<a href="#">
+					<i class='bxr bxs-book-library menuLateral__icon'></i>Infórmate<i class='bx bx-chevron-right menuLateral__icon--right'></i></a>
+					<!--Definición de Submenu que depende del Menu Informate-->
+					<ul class="menuLateral__side-dropdown">
+						<li><a href="#">Información General</a></li>
+						<li><a href="#">Lugares Frecuentes</a></li>
+                        <li><a href="#">Disminuir el Tráfico</a></li>
+                        <li><a href="#">Afectados</a></li>
+                        <li><a href="#">Leyes</a></li>
+                        <li><a href="#">Estadísticas</a></li>
+					</ul>
+				    </li>
+			        <li><a href="/Denunciar/Denunciar.html"><i class='bxr bxs-file-report menuLateral__icon'></i> Denunciar</a></li>
+				</div>
+			    <!-- Opción exclusiva del ADMIN -->
+				<div class="menu-admin">
+		            <li>
+			            <a href="/dashboard.html">
+				            <i class='bx bxs-dashboard menuLateral__icon'></i> Dashboard
+			            </a>
+		            </li>
+					<li><a href="rutaCritica/rutaCritica.html">
+						<i class='bxr bxs-alert-triangle menuLateral__icon'></i> Rutas Críticas
+					</a></li>
+	            </div>
+		</ul>
+
+	</section>
+	<!-- Aqui termina la barra lateral izquierda -->
+
+    <section id="content">
+        <!--Aqui empieza el header-->
+    <nav>
+			<i class='bxr bxs-menu nav__toggle-sidebar' alt="Menu" name="menu"></i>  
+			<!--Formulario de Busqueda-->
+			<form class="nav__form" action="#">
+				<div class="nav__form-group">
+					<input id="searchInput"  class="nav__form-group--input" type="text" placeholder="Buscar...">
+					<i class='bx bx-search nav__form-group--icon'></i>
+				</div>
+			</form>
+			<!--Icono de campana de notificacion-->
+			<a href="#" class="nav__link">
+				<i class='bx bxs-bell nav__link-icon' ></i>
+				<span class="nav__link-badge">500</span>
+			</a>
+			<!--Icono de notificaciones de mensajes-->
+			<!-- <a href="#" class="nav__link">
+				<i class='bx bxs-message-square-dots nav__link-icon'></i>
+				<span class="nav__link-badge">1000</span>
+			</a> -->
+
+			<span class="nav__divider"></span>
+			<!--Foto de perfil del usuario que inicio sesion en el sistema-->
+			<div class="nav__profile">
+				<img src="/recursos/profile.png" class="nav__profile-img">
+				<ul class="nav__profile-link">
+					<li><a href="#"><i class='bx bxs-user-circle nav__link-icon' ></i> Perfil</a></li>
+					<li><a href="#"><i class='bx bxs-cog' ></i> Configuracion</a></li>
+					<li><a href="/index.html"><i class='bxr  bxs-arrow-out-left-square-half'></i> Cerrar Sesion</a></li>
+				</ul>
+			</div>
+		</nav>
+	    <!-- AQUI TERMINA LA BARRA DE NAVEGACION -->
+     
+    <!-- inicio del carrusel -->
+    <main>
+        <section class="carousel-container">
+            <div class="carousel">
+                <button class="carousel-arrow prev" id="button-prev">&lt;</button>
+                <div class="carousel-track-wrapper">
+                    <div class="carousel-track" id="track">
+                        <div class="carousel-item">
+                            <img src="recursos/lapacarrucel.jpeg" alt="lapa roja">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="recursos/armadilloarrucel.jpeg" alt="armadillo">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="recursos/iguanacarrucel.jpeg" alt="Iguana">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="recursos/lapaacarrucel.jpg" alt="lapa roja2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="recursos/serpientecarrucel.jpeg" alt="serpiente">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="recursos/tigrecarrucel.jpeg" alt="Tigre">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="recursos/tortugacarrucel.jpeg" alt="tortuga">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="recursos/iguanaafecta.jpeg" alt="Iguana2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="recursos/jaguarcarousel.jpg" alt="Jaguar">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="recursos/tortugacarousel.jpg" alt="Tortuga2">
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-arrow next" id="button-next">&gt;</button>
+            </div>
+        </section><!-- Fin delcarrusel -->
+
+        <!-- inicio de infromaacion -->
+        <section id="informate" class="content-section">
+            <h5 class="content-section__title">Información general</h5>
+            <img src="recursos/monoinf.jpeg" alt="Lapa" class="content-section__image">
+            <div class="content-section__body">
+                <p class="content-section__text">
+                    El tráfico ilegal de animales es una grave amenaza en Nicaragua, un país reconocido por su
+                    enorme biodiversidad y riqueza natural. La caza y comercio ilegal de especies han crecido
+                    debido a la alta demanda de fauna nativa, tanto dentro del país como en mercados
+                    internacionales. Este tráfico afecta no solo a las especies capturadas, sino a ecosistemas
+                    completos, generando desequilibrios ecológicos.
+                </p>
+                <p class="content-section__text">
+                    Un ejemplo alarmante es la captura de loros y otras aves exóticas. Para conseguir estas aves, a
+                    menudo se derriban árboles enteros, lo que no solo pone en peligro a la especie objetivo, como
+                    las crías de lora, sino que también causa daños irreparables en el hábitat circundante. Esto
+                    reduce la capacidad de regeneración de los bosques y afecta a otras especies que dependen del
+                    mismo entorno.
+                </p>
+                <p class="content-section__text">
+                    En Nicaragua, las especies más vulnerables al tráfico incluyen tortugas, aves exóticas, monos y
+                    reptiles. Este comercio ilícito pone en riesgo la estabilidad de las poblaciones animales y, con el
+                    tiempo, podría llevar a la extinción de algunas especies.
+                </p>
+                <p class="content-section__text">
+                    Además, las leyes y medidas de conservación buscan frenar esta problemática, pero aún
+                    enfrentan desafíos como la falta de recursos y la educación ambiental. La colaboración entre
+                    ciudadanos, autoridades y organizaciones de conservación es esencial para proteger la
+                    biodiversidad y reducir el tráfico de especies en Nicaragua.
+                </p>
+            </div>
+        </section>
+
+        <section id="lugares" class="content-section">
+            <h5 class="content-section__title">Lugares más frecuentes</h5>
+            <img src="recursos/lugaresfrec.jpg" alt="Iguana" class="content-section__image">
+            <div class="content-section__body">
+                <p class="content-section__text">
+                    Según el Ministerio del Ambiente y los Recursos Naturales (MARENA), el tráfico de animales en Nicaragua tiene focos
+                    importantes en varias regiones donde la biodiversidad es particularmente rica, pero también vulnerable.
+                </p>
+                <p class="content-section__text">
+                    Punta Cosigüina, Chinandega: Ubicada en la costa noroeste, esta área es hogar de diversas especies de reptiles, aves y
+                    mamíferos. Las especies capturadas aquí se comercializan principalmente en Managua, y su extracción afecta seriamente el
+                    equilibrio de los ecosistemas de la región.
+                </p>
+                <p class="content-section__text">
+                    Siuna y Bonanza, Caribe Norte: Estas localidades, situadas en la Región Autónoma de la Costa Caribe Norte, son áreas de
+                    bosques tropicales densos donde la fauna silvestre es abundante. Aquí se capturan animales como monos, aves exóticas y
+                    reptiles para su venta ilegal en otras partes del país.
+                </p>
+                <p class="content-section__text">
+                    El Rama, Caribe Sur: En esta zona de alta biodiversidad, se encuentran especies de anfibios, reptiles y aves que a menudo
+                    son extraídas para el comercio ilícito. La selva húmeda de esta región sufre también por la deforestación y el impacto humano.
+                </p>
+                <p class="content-section__text">
+                    Chontales, Matagalpa y Río San Juan: Estas tres regiones poseen selvas y áreas de pastizales que son hábitats de animales
+                    como las tortugas, loros y pequeños mamíferos. La extracción de estas especies para su venta en el mercado negro de Managua
+                    afecta tanto a las poblaciones animales como al medio ambiente de cada una de estas áreas.
+                </p>
+                <p class="content-section__text">
+                    Cada uno de estos lugares es crítico para la conservación de la biodiversidad en Nicaragua, y su explotación para el comercio
+                    ilegal de especies tiene un impacto negativo, no solo sobre las especies traficadas, sino también en el equilibrio de los
+                    ecosistemas.
+                </p>
+            </div>
+        </section>
+
+        <section id="disminuir" class="content-section">
+            <h5 class="content-section__title">Importancia de disminuir el tráfico de animales</h5>
+            <img src="recursos/loroimport.jpg" alt="Armadillo" class="content-section__image">
+            <div class="content-section__body">
+                <p class="content-section__text">
+                    La disminución del tráfico de animales en Nicaragua es fundamental para conservar su biodiversidad y mantener el equilibrio de sus ecosistemas.
+                    Este comercio ilícito no solo amenaza a muchas especies, varias de ellas en peligro de extinción, sino que también desestabiliza las interacciones
+                    ecológicas naturales. Al extraer animales de sus hábitats, se interrumpen los ciclos biológicos y se afecta la función de otras especies, lo que
+                    compromete la salud de los ecosistemas.
+                </p>
+                <p class="content-section__text">
+                    Además, el tráfico de fauna silvestre tiene consecuencias para la seguridad humana. La captura y el transporte de animales pueden facilitar la
+                    propagación de enfermedades zoonóticas, que afectan tanto a los animales como a las personas. Este riesgo de transmisión de enfermedades subraya
+                    la importancia de erradicar el tráfico ilegal.
+                </p>
+                <p class="content-section__text">
+                    Para combatir el problema, se requieren medidas efectivas, como el fortalecimiento de las leyes de protección ambiental y la implementación de
+                    penas más severas para quienes participan en el comercio ilegal. También es esencial educar a las comunidades sobre la importancia de preservar la
+                    fauna silvestre y sobre cómo el tráfico de especies impacta negativamente la biodiversidad y los recursos naturales de los que todos dependemos.
+                </p>
+            </div>
+        </section>
+
+        <section id="afectados" class="content-section">
+            <h5 class="content-section__title">Principales afectados</h5>
+            <div class="content-section__body">
+                <table class="species-table">
+                    <thead>
+                        <tr>
+                            <th>Especie</th>
+                            <th>Hábitat</th>
+                            <th>Estado</th>
+                            <th>Amenazas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Murciélago lancero ventrianteado (Phylloderma stenops)</td>
+                            <td>bosques húmedos y siempreverdes (Nicaragua)</td>
+                            <td>En peligro</td>
+                            <td>destrucción del hábitat</td>
+                        </tr>
+                        <tr>
+                            <td>Jaguar (Panthera onca)</td>
+                            <td>Selvas tropicales (Nicaragua)</td>
+                            <td>En peligro</td>
+                            <td>pérdida de hábitat y la caza furtiva</td>
+                        </tr>
+                        <tr>
+                            <td>Tortuga Carey</td>
+                            <td>Arrecifes tropicales y playas</td>
+                            <td>Críticamente amenazada</td>
+                            <td>extracción ilegal de huevos y la destrucción de sus áreas</td>
+                        </tr>
+                        <tr>
+                            <td>Pavón grande (Crax rubra)</td>
+                            <td>bosques tropicales</td>
+                            <td>En peligro</td>
+                            <td>caza y la pérdida de hábitat</td>
+                        </tr>
+                        <tr>
+                            <td>Mono araña (Ateles geoffroyi)</td>
+                            <td>selva baja primaria</td>
+                            <td>peligro crítico</td>
+                            <td>fragmentación del hábitat y la cacería</td>
+                        </tr>
+                        <tr>
+                            <td>Oso hormiguero gigante (Myrmecophaga tridactyla)</td>
+                            <td>bosques húmedos y secos, pastizales y sabanas.(Nicaragua)</td>
+                            <td>Vulnerable</td>
+                            <td>Pérdida de hábitat, expansión agrícola, caza furtiva y atropellamiento en carretera</td>
+                        </tr>
+                        <tr>
+                            <td>Lagartija Anolis (_Norops humilis_)</td>
+                            <td>áreas boscosas</td>
+                            <td>Vulnerable</td>
+                            <td>Pérdida de hábitat por la deforestación y urbanización,</td>
+                        </tr>
+                        <tr>
+                            <td>Murciélago orejudo gorgiamarillento (_Lampronycteris brachyotis_)</td>
+                            <td>bosques húmedos tropicales y subtropicales</td>
+                            <td>Vulnerable</td>
+                            <td>Pérdida de hábitat por la deforestación y perturbación de sus refugios.</td>
+                        </tr>
+                        <tr>
+                            <td>Lora Corona Blanca(Pionus senilis)</td>
+                            <td>Bosques húmedos y semicaducifolios(Nicaragua)</td>
+                            <td>Vulnerable</td>
+                            <td>Deforestación y captura para el comercio ilegal de mascotas.</td>
+                        </tr>
+                        <tr>
+                            <td>Lora Corona Roja(Amazona viridigenalis)</td>
+                            <td>Bosques secos y áreas semiáridas.</td>
+                            <td>En peligro</td>
+                            <td>Pérdida de hábitat por la deforestación y urbanización</td>
+                        </tr>
+                        <tr>
+                            <td>Tapir(Tapirus)</td>
+                            <td>Bosques tropicales y subtropicales</td>
+                            <td>En peligro</td>
+                            <td>Destrucción del hábitat, cacería y conflicto con actividades humanas.</td>
+                        </tr>
+                        <tr>
+                            <td>Manatí(Trichechus)</td>
+                            <td>Aguas costeras poco profundas, estuarios y ríos</td>
+                            <td>En peligro</td>
+                            <td>Colisiones con embarcaciones, enredos en redes de pesca, pérdida de hábitat y contaminación.</td>
+                        </tr>
+                        <tr>
+                            <td>Oso Perezoso(Melursus ursinus)</td>
+                            <td>Bosques tropicales y subtropicales</td>
+                            <td>Vulnerable</td>
+                            <td>Destrucción del hábitat, caza furtiva y conflicto con humanos.</td>
+                        </tr>
+                        <tr>
+                            <td>Oso Hormiguero(Vermilingua)</td>
+                            <td>Pastizales, sabanas, bosques secos y húmedos.</td>
+                            <td>Vulnerable</td>
+                            <td>Pérdida de hábitat, cacería y atropellos.</td>
+                        </tr>
+                        <tr>
+                            <td>Ocelote(Leopardus pardalis)</td>
+                            <td>Bosques tropicales y subtropicales</td>
+                            <td>Vulnerable</td>
+                            <td>Pérdida de hábitat y cacería furtiva.</td>
+                        </tr>
+                        <tr>
+                            <td>Tigrillo(Leopardus tigrinus)</td>
+                            <td>bosques húmedos tropicales y subtropicales</td>
+                            <td>Vulnerable</td>
+                            <td>Destrucción del hábitat y cacería furtiva.</td>
+                        </tr>
+                        <tr>
+                            <td>Leopardo(Panthera pardus)</td>
+                            <td>selvas tropicales, desiertos y montañas.</td>
+                            <td>Vulnerable</td>
+                            <td>Pérdida de hábitat, cacería furtiva y conflicto con humanos.</td>
+                        </tr>
+                        <tr>
+                            <td>Puma(Puma concolor)</td>
+                            <td>bosques, selvas, desiertos y montañas.</td>
+                            <td>Vulnerable</td>
+                            <td>Pérdida de hábitat, cacería y conflicto con actividades humanas.</td>
+                        </tr>
+                        <tr>
+                            <td>Chocoyo(Psittacara strenuus)</td>
+                            <td>Bosques secos y áreas abiertas con árboles dispersos</td>
+                            <td>Vulnerable</td>
+                            <td>Deforestación y captura para el comercio ilegal de mascotas.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="leyes" class="content-section">
+            <h5 class="content-section__title">Leyes</h5>
+            <img src="recursos/tigreleyes.jpeg" alt="Iguana" class="content-section__image">
+            <div class="content-section__body">
+                <p class="content-section__text">
+                    La Ley No. 787 se enfoca en la protección de datos personales, estableciendo directrices sobre cómo se debe recopilar, almacenar y manejar esta
+                    información para garantizar la privacidad de los individuos. Esta ley es fundamental para asegurar que los datos personales no sean utilizados de
+                    manera indebida y que se respeten los derechos de las personas en relación con su información.
+                </p>
+                <p class="content-section__text">
+                    Por otro lado, la Ley No. 1042 aborda específicamente la privacidad y confidencialidad de los datos sensibles, como información médica, financiera o
+                    de identidad. Esta ley proporciona un marco más riguroso para proteger este tipo de datos, reconociendo su naturaleza delicada y la necesidad de un
+                    manejo cuidadoso.
+                </p>
+                <p class="content-section__text">
+                    Estudiar a fondo ambas leyes es esencial para comprender sus implicaciones en cualquier proyecto que maneje datos personales. Esto nos permitirá
+                    implementar prácticas adecuadas que aseguren el cumplimiento legal y protejan la información de los usuarios, evitando así posibles sanciones y
+                    promoviendo la confianza en el manejo de datos.
+                </p>
+            </div>
+        </section>
+
+        <section id="estadisticas" class="content-section">
+            <h5 class="content-section__title">Estadísticas</h5>
+            <img src="recursos/laparojaestadis.jpeg" alt="Armadillo" class="content-section__image">
+            <div class="content-section__body">
+                <p class="content-section__text">
+                    En el período de un mes, se registraron un total de 628 casos. Estos casos se distribuyen entre diferentes municipios y departamentos del país.
+                </p>
+                <p class="content-section__text">
+                    El municipio con el menor número de casos registrados es Chinandega, con 4 casos, perteneciente a 2 municipios. Por otro lado, la Región Autónoma
+                    de la Costa Caribe Sur (RACCS) presenta el mayor número de casos, con 120 casos distribuidos en 3 municipios.
+                </p>
+                <p class="content-section__text">
+                    En total, se observa un promedio de 16 a 17 casos diarios.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    </section>
+
+    <script src="./Informate.js"></script>
+    <script src="/Login/auth.js"></script>
+</body>
+
+</html>

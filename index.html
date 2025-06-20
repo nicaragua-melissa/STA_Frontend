@@ -1,177 +1,129 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>STA Dashboard</title>
-    <!-- Boxicons CDN para los íconos -->
-    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bienvenido - STA </title>
+  <!--libreria de iconos-->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  <!--Referencia a la hoja de estilo-->
+  <link rel="stylesheet" href="Login/Login.css">
 </head>
+
 <body>
-    <div class="menu">
-        <h2>Save the Animals Dashboard</h2>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <!-- Rutas Críticas eliminado -->
-            <li><a href="#estadisticas">Información y Estadísticas</a></li>
-            <li><a href="#denuncias">Denuncias Registradas</a></li>
-            <li><a href="#camaras">Cámaras de Seguridad</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
+  
+  <header id="divisorEncabezado" class="div__encabezado">
+    <img src="/recursos/Logo STA sin fondo.png" alt="Imagen de fondo con una Guacamaya" name="Guacamaya">
+    <h2>Save the Animals</h2>
+    <button class="button__iniciarSesion" onclick="document.getElementById('modalIniciarSesion').style.display='block' ">Iniciar
+    Sesión</button>
+  </header>
+
+
+  <main>
+
+    <div id="modalIniciarSesion" class="modal">
+
+      <form class="modal-content animate" action="/Inicio/Inicio.html" method="post">
+
+        <div class="img__container">
+          <span onclick="document.getElementById('modalIniciarSesion').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="/recursos/Logo STA sin fondo.png" alt="Avatar" class="logo">
+        </div>
+
+        <div class="container">
+          <label for="uname"><b>Usuario</b></label>
+          <input type="text" placeholder="Ingresar Usuario" name="uname" required>
+
+          <label for="psw"><b>Contraseña</b></label>
+          <input type="password" placeholder="Ingresar Contraseña" name="psw" required>
+
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Recordar Contraseña
+          </label>  
+          <button type="submit">Ingresar</button>
+        </div>
+
+      </form>
+
     </div>
-    
-    <div class="contenido" id="inicio">
-        <header>
-            <img src="/recursos/Logo STA sin fondo.png">
-            <h1> | Bienvenido al Dashboard</h1>
-        </header>
-        <p class="headerP">Monitoreo del tráfico ilegal de animales y supervisión de áreas protegidas.</p>
-        <main>
-            <section class="section-estadisticas" id="estadisticas">
-                <div class="contenedor-cuadros">
-                    <h2>Estadísticas Resumidas</h2>
-                    <div class="cuadro">
-                        <img src="/recursos/denunciante.png" alt="denuncias">
-                        <p>Denuncias Registradas</p>
-                        <h3>25</h3>
-                    </div>
-                    <div class="cuadro">
-                        <img src="/recursos/camara-de-seguridad.png" alt="camaras">
-                        <p>Cámaras Activas</p>
-                        <h3>10</h3>
-                    </div>
-                    <div class="cuadro">
-                        <img src="/recursos/ubicacion-de-la-direccion.png" alt="areas">
-                        <p>Áreas Monitoreadas</p>
-                        <h3>5</h3>
-                    </div>
-                </div>
 
-                <div class="primeras-graficas">
-                    <div class="cuadroGrafica">
-                        <p><b>Comparativa de Valores por Categoría</b></p>
-                        <img src="/recursos/gráfica-barra.jpg" alt="Gráfico de barras">
-                    </div>
-                    <div class="cuadroGrafica">
-                        <p><b>Porcentaje de Cumplimiento</b></p>
-                        <img src="/recursos/gráfica-circulo1.jpg" alt="Gráfico de circulo">
-                    </div>
-                    <div class="cuadroGrafica">
-                        <p><b>Análisis de Datos por segmento</b></p>
-                        <img src="/recursos/gráfica-horizontal.jpg" alt="Gráfico de barras horizontal"> 
-                    </div>
-                    <div class="segundas-graficas">
-                        <div class="cuadroGrafica">
-                            <p><b>Indicadores de Avance</b></p>
-                            <img src="/recursos/gráfica-circulo2.jpg" alt="Gráfico de circulo"> 
-                        </div>
-                        <div class="cuadroGrafica">
-                            <p><b>Tendencias en Áreas</b></p>
-                            <img src="/recursos/gráfica-triangulo.jpg" alt="Gráfico de triángulos"> 
-                        </div>
-                        <div class="cuadroGrafica">
-                            <p><b>Distribución de porcentajes</b></p>
-                            <img src="/recursos/gráfica-pastel.jpg" alt="Gráfico de pastel"> 
-                        </div>
-                    </div>
-                </div>
-            </section>
+    <div class="denuncia__background">
+      <img src="/recursos/view-wild-parrot.jpg">
 
-            <section class="tabla-denuncias" id="denuncias">
-                <h2>Últimos Reportes</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th> Código </th>
-                            <th> Descripción Persona </th>
-                            <th> Descripción Hechos </th> 
-                            <th> Dirección (hechos) </th>   
-                            <th> Fecha </th>               
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td> STA01 </td>
-                            <td> Hombre de aproximadamente 40 años, tez morena, cabello corto, vestimenta oscura. </td>
-                            <td> Se observó transportando loros y monos en jaulas dentro de un vehículo sin identificación. </td>
-                            <td> Mercado Oriental, Managua </td>
-                            <td> 2025-04-27 </td>
-                        </tr>
-                        <tr>
-                            <td> STA02 </td>
-                            <td> Grupo de tres personas, dos hombres y una mujer, con mochilas grandes y actitud sospechosa. </td>
-                            <td> Se detectó la venta de tucanes y lapas en un puesto improvisado. </td>
-                            <td> Carretera hacia Bluefields </td>
-                            <td> 2025-04-26 </td>
-                        </tr>
-                        <tr>
-                            <td> STA03 </td>
-                            <td> Hombre joven, delgado, con tatuajes visibles en brazos. </td>
-                            <td> Se vio capturando iguanas y serpientes cerca de una reserva natural. </td>
-                            <td> Reserva Biológica Indio Maíz </td>
-                            <td> 2025-04-25 </td>
-                        </tr>
-                        <tr>
-                            <td> STA04 </td>
-                            <td> Mujer de mediana edad, cabello largo, vestimenta colorida. </td>
-                            <td> Se reportó ofreciendo animales exóticos a turistas en la playa. </td>
-                            <td> San Juan Del sur </td>
-                            <td> 2025-04-24 </td>
-                        </tr>
-                        <tr>
-                            <td> STA05 </td>
-                            <td> Hombre robusto, con barba y gorra, acompañado de otro individuo </td>
-                            <td> Se observó trasladando cajas con aves en motocicletas sin placas. </td>
-                            <td> Frontera con Honduras, punto ciego</td>
-                            <td> 2025-04-23 </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <section class="section-camaras" id="camaras">
-                <h2>Cámaras de Seguridad</h2>
-                
-                <div class="camara-estado">
-                    <div class="camara">
-                        <span class="estado activa"></span>
-                        <p>Cámara 1 - Activa</p>
-                    </div>
-                    <div class="camara">
-                        <span class="estado inactiva"></span>
-                        <p>Cámara 2 - Inactiva</p>
-                    </div>
-                    <div class="camara">
-                        <span class="estado mantenimiento"></span>
-                        <p>Cámara 3 - Mantenimiento</p>
-                    </div>
-                </div>
-        
-                <div class="mapa-container">
-                    <h3>Ubicación de Cámaras</h3>
-                    <div class="mapa">
-                        <img src="/recursos/mapa-rutas.jpg" alt="Mapa">
-                        <span class="camara-ubicacion1">📍</span>
-                        <span class="camara-ubicacion2">📍</span>
-                        <span class="camara-ubicacion3">📍</span>
-                    </div>
-                </div>
-            </section>
-        
-            <section id="contacto">
-                <h2>Contacto</h2>
-                <p>Para ayuda o consultas, envíanos un correo a: 
-                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=jrjtWvNPPQcPqzrRFFjFHPrNtcdcTqJsTDqvmRshtCJPKWgGRppcBMxHSpBQXHzLgdQxcQrS">savetheanimals@gmail.com</a>
-                </p>
-            </section>
-        </main>
-
-        <footer class="pie">
-            <br>
-            <br>
-            &copy Derechos de autor reservados - Save The Animals 2025
-        </footer>
+      <div class="denuncia__background-Denunciar">
+        <h1>Protege la vida silvestre:<br> Denuncia el tráfico ilegal de <br>animales</h1>
+        <button class="button__denunciar" type="submit" onclick="document.getElementById('modalIniciarSesion').style.display='block' ">Denunciar Ahora</button>
+        <p>Tu denuncia es anónima y segura. Protegemos tu privacidad para que puedas ayudar sin temor.</p>
+      </div>
     </div>
+
+    <section class="carousel-container">
+        <h2>Animales en peligro de extinción</h2>
+
+        <div class="carousel">
+            <button class="carousel-arrow prev" id="button-prev">&lt;</button>
+
+            <div class="carousel-track-wrapper">
+                <div class="carousel-track" id="track">
+                    <div class="carousel-item">
+                        <a href="#"><h4><small>Tortuga</small> Carey</h4><img src="/recursos/tortuga-carey" alt="Tortuga Carey"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#"><h4><small>Lora</small> Frente Roja</h4><img src="/recursos/chocoyo.png" alt="Lora Frente Roja"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#"><h4><small>Imagen</small> Guacamaya Roja</h4> <img src="/recursos/guacamaya-roja.jpg" alt="Guacamaya Roja"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#"><h4><small>Lora</small> Corona Blanca</h4> <img src="/recursos/lora-corona-blanca.jpg" alt="Lora Corona Blanca"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#"><h4><small>Imagen</small> Tucan</h4> <img src="/recursos/tucan.jpg" alt="Tucán"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#"><h4><small>Imagen</small> Tigrillo</h4> <img src="/recursos/trigrillo.jpg" alt="Tigrillo"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#"><h4><small>Imagen</small> Leopardo</h4> <img src="/recursos/leopardo.jpg" alt="Leopardo"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#"><h4><small>Oso</small> Perezoso</h4> <img src="/recursos/oso-perezoso.jpg" alt="Oso Perezoso"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#"><h4><small>Oso</small> Hormiguero</h4> <img src="/recursos/oso-hormiguero.jpg" alt="Oso Hormiguero"></a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="#"><h4><small>Imagen</small> Tapir</h4> <img src="/recursos/tapirus.jpeg" alt="Tapir"></a>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-arrow next" id="button-next">&gt;</button>
+        </div>
+
+    </section>
+
+
+    <!-- Sección de Contacto -->
+    <section id="contacto">
+      <h2>Información de Contacto</h2>
+      <p><strong>Email:</strong> <a href="savetheanimals@gmail.com">savetheanimals@gmail.com</a></p>
+      <p><strong>Teléfono:</strong> <a href="tel:+50512345678">+505 1234-5678</a></p>
+      <p><strong>Dirección:</strong> Managua, Nicaragua</p>
+      <p><strong>Horario de Atención:</strong> Lunes a Viernes 8:00 AM - 5:00 PM</p>
+    </section>
+
+  </main>
+  
+  <script  src="Login/Login.js"></script>
+
+  <footer>
+    <p>Todos los derechos reservados © </p>
+  </footer>
+
+  <script src="./Login/auth.js"></script>
+
 </body>
+
 </html>

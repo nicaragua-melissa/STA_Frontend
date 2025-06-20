@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--libreria de iconos-->
+	<link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+	<!--Referencia al estilo del sitio-->
+	<link rel="stylesheet" href="./Inicio.css">
+    <title>Inicio</title>
+</head>
+<body>
+
+    <!-- Aqui comienza el MENU LATERAL IZQUIERDO -->
+	<section id="menuLateral">
+		<!-- TITULO DE LA APLICACION WEB -->
+		<a href="/index.html" class="menuLateral__brand"><img src="/recursos/Logo STA sin fondo.png">  Save The Animals</a>
+		<!-- Lista Desordenada de las opciones del menu lateral -->
+		<ul class="menuLateral__side-menu">
+			<!--Título par las operaciones del sistema-->
+			<li class="menuLateral__divisor" data-text="OPERACIONES">OPERACIONES
+
+			</li>
+				<div class="menu-comun">
+					<li>
+					<a href="/Informate/Informate.html">
+				<i class='bxr bxs-book-library menuLateral__icon'></i>Infórmate</a>
+				    </li>
+			        <li><a href="/Denunciar/Denunciar.html"><i class='bxr bxs-file-report menuLateral__icon'></i> Denunciar</a></li>
+				</div>
+			    <!-- Opción exclusiva del ADMIN -->
+				<div class="menu-admin">
+		            <li>
+			            <a href="/dashboard.html">
+				            <i class='bx bxs-dashboard menuLateral__icon'></i> Dashboard
+			            </a>
+		            </li>
+					<li><a href="rutaCritica/rutaCritica.html">
+						<i class='bxr bxs-alert-triangle menuLateral__icon'></i> Rutas Críticas
+					</a></li>
+	            </div>
+		</ul>
+
+	</section>
+	<!-- Aqui termina la barra lateral izquierda -->
+
+    <section id="content">
+        <!--Aqui empieza el header-->
+    <nav>
+			<i class='bxr bxs-menu nav__toggle-sidebar' alt="Menu" name="menu"></i>  
+			<!--Formulario de Busqueda-->
+			<form class="nav__form" action="#">
+				<div class="nav__form-group">
+					<input id="searchInput"  class="nav__form-group--input" type="text" placeholder="Buscar...">
+					<i class='bx bx-search nav__form-group--icon'></i>
+				</div>
+			</form>
+			<!--Icono de campana de notificacion-->
+			<a href="#" class="nav__link">
+				<i class='bx bxs-bell nav__link-icon' ></i>
+				<span class="nav__link-badge">500</span>
+			</a>
+			<!--Icono de notificaciones de mensajes-->
+			<!-- <a href="#" class="nav__link">
+				<i class='bx bxs-message-square-dots nav__link-icon'></i>
+				<span class="nav__link-badge">1000</span>
+			</a> -->
+
+			<span class="nav__divider"></span>
+			<!--Foto de perfil del usuario que inicio sesion en el sistema-->
+			<div class="nav__profile">
+				<img src="/recursos/profile.png" class="nav__profile-img">
+				<ul class="nav__profile-link">
+					<li><a href="#"><i class='bx bxs-user-circle nav__link-icon' ></i> Perfil</a></li>
+					<li><a href="#"><i class='bx bxs-cog' ></i> Configuracion</a></li>
+					<li><a href="/index.html"><i class='bxr  bxs-arrow-out-left-square-half'></i> Cerrar Sesion</a></li>
+				</ul>
+			</div>
+		</nav>
+	    <!-- AQUI TERMINA LA BARRA DE NAVEGACION -->
+     
+        <main>
+
+        </main>
+
+	    <footer class="pie">
+            <br>
+            <br>
+            &copy Derechos de autor reservados - Save The Animals 2025
+        </footer>
+
+    </section>
+
+    <script src="/Inicio/Inicio.js"></script>
+	<script src="/Login/auth.js"></script>
+
+</body>
+
+</html>

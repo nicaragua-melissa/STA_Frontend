@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--libreria de iconos-->
+	<link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+	<!--Referencia al estilo del sitio-->
+	<link rel="stylesheet" href="./Denunciar.css">
+    <title>Denunciar</title>
+</head>
+<body>
+
+    <!-- Aqui comienza el MENU LATERAL IZQUIERDO -->
+	<section id="menuLateral">
+		<!-- TITULO DE LA APLICACION WEB -->
+		<a href="/index.html" class="menuLateral__brand"><img src="/recursos/Logo STA sin fondo.png">  Save The Animals</a>
+		<!-- Lista Desordenada de las opciones del menu lateral -->
+		<ul class="menuLateral__side-menu">
+			<!--Título par las operaciones del sistema-->
+			<li class="menuLateral__divisor" data-text="OPERACIONES">OPERACIONES
+
+			</li>
+				<div class="menu-comun">
+                    <li><a href="/Inicio/Inicio.html"><i class='bxr  bxs-home-alt-2 menuLateral__icon'></i> Inicio</a></li>
+					<li>
+					<a href="/Informate/Informate.html">
+				        <i class='bxr bxs-book-library menuLateral__icon'></i>Infórmate</a>
+				    </li>
+			        <li><a href="/Denunciar/Denunciar.html"><i class='bxr bxs-file-report menuLateral__icon'></i> Denunciar</a></li>
+				</div>
+			    <!-- Opción exclusiva del ADMIN -->
+				<div class="menu-admin">
+		            <li>
+			            <a href="/dashboard.html">
+				            <i class='bx bxs-dashboard menuLateral__icon'></i> Dashboard
+			            </a>
+		            </li>
+					<li><a href="rutaCritica/rutaCritica.html">
+						<i class='bxr bxs-alert-triangle menuLateral__icon'></i> Rutas Críticas
+					</a></li>
+	            </div>
+		</ul>
+
+	</section>
+	<!-- Aqui termina la barra lateral izquierda -->
+
+    <section id="content">
+        <!--Aqui empieza el header-->
+    <nav>
+			<i class='bxr bxs-menu nav__toggle-sidebar' alt="Menu" name="menu"></i>  
+			<!--Formulario de Busqueda-->
+			<form class="nav__form" action="#">
+				<div class="nav__form-group">
+					<input id="searchInput"  class="nav__form-group--input" type="text" placeholder="Buscar...">
+					<i class='bx bx-search nav__form-group--icon'></i>
+				</div>
+			</form>
+			<!--Icono de campana de notificacion-->
+			<a href="#" class="nav__link">
+				<i class='bx bxs-bell nav__link-icon' ></i>
+				<span class="nav__link-badge">500</span>
+			</a>
+			<!--Icono de notificaciones de mensajes-->
+			<!-- <a href="#" class="nav__link">
+				<i class='bx bxs-message-square-dots nav__link-icon'></i>
+				<span class="nav__link-badge">1000</span>
+			</a> -->
+
+			<span class="nav__divider"></span>
+			<!--Foto de perfil del usuario que inicio sesion en el sistema-->
+			<div class="nav__profile">
+				<img src="/recursos/profile.png" class="nav__profile-img">
+				<ul class="nav__profile-link">
+					<li><a href="#"><i class='bx bxs-user-circle nav__link-icon' ></i> Perfil</a></li>
+					<li><a href="#"><i class='bx bxs-cog' ></i> Configuracion</a></li>
+					<li><a href="/index.html"><i class='bxr  bxs-arrow-out-left-square-half'></i> Cerrar Sesion</a></li>
+				</ul>
+			</div>
+		</nav>
+	    <!-- AQUI TERMINA LA BARRA DE NAVEGACION -->
+            
+    <main class="report">
+        <h1 class="report__title">Denunciar</h1>
+        
+        <form class="report__form" id="reportForm">
+            <!-- Tipo de denuncia -->
+            <div class="report__form-group">
+                <label for="reportType" class="report__label">Tipo de denuncia:</label>
+                <select id="reportType" class="report__select">
+                    <option value="persona">Reportar Persona</option>
+                    <option value="animal">Reportar Animal</option>
+                </select>
+            </div>
+
+            <!-- Descripción de la persona/animal -->
+            <div class="report__form-group">
+                <label for="personDescription" class="report__label">Descripción:</label>
+                <textarea id="personDescription" class="report__textarea"></textarea>
+                <small class="report__small-text">Describe la persona que realizó el tráfico ilegal o el animal que está en peligro.</small>
+            </div>
+
+            <!-- Descripción de los hechos -->
+            <div class="report__form-group">
+                <label for="incidentDescription" class="report__label">Descripción de los hechos:</label>
+                <textarea id="incidentDescription" class="report__textarea"></textarea>
+            </div>
+
+            <!-- Ubicación y zona -->
+            <div class="report__form-group">
+                <label for="location" class="report__label">Ubicación del incidente:</label>
+                <input type="text" id="location" class="report__input">
+            </div>
+            <div class="report__form-group">
+                <label for="zone" class="report__label">Zona:</label>
+                <input type="text" id="zone" class="report__input">
+            </div>
+
+            <!-- Fecha del incidente -->
+            <div class="report__form-group">
+                <label for="date" class="report__label">Fecha del incidente:</label>
+                <input type="datetime-local" id="date" class="report__input">
+            </div>
+
+            <!-- Especie afectada -->
+            <div class="report__form-group">
+                <label for="speciesAffected" class="report__label">Especie afectada:</label>
+                <input type="text" id="speciesAffected" class="report__input">
+            </div>
+
+            <!-- Ruta Crítica -->
+            <div class="report__form-group">
+                <label for="criticalPath" class="report__label">Ruta Crítica:</label>
+                <select id="criticalPath" class="report__select">
+                    <option value="84213">Sendero Macuelizo</option>
+                    <option value="23017">Ruta de Jalapa</option>
+                    <option value="67582">Camino de Ocotal</option>
+                    <option value="98426">Paso el Jicaro</option>
+                    <option value="31259">Ruta del Coco</option>
+                    <option value="40381">Tierra de los Segovianos</option>
+                    <option value="71850">Cendero de los Cerros</option>
+                    <option value="12684">Paso de los Pinabetales</option>
+                    <option value="89504">Ruta del Río Poteca</option>
+                    <option value="67321">Camino de los Frijoles Rojos</option>
+                    <option value="92105">Selva de los Matagalpas</option>
+                    <option value="34761">Ruta de los Maestros del Café</option>
+                    <option value="21H89">Sendero de los Comales</option>
+                    <option value="76834">Paso de los Caciques Segovianos</option>
+                    <option value="54210">Tierra de los Carpinteros</option>
+                    <option value="69048">Camino del Valle de Dipilto</option>
+                </select>
+            </div>
+
+            <button type="submit" class="report__button">Enviar denuncia</button>
+        </form>
+
+        <!-- Tabla de denuncias -->
+        <section class="report__history">
+            <h2 class="report__history-title">Denuncias realizadas</h2>
+            <table class="report__table">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Descripción</th>
+                        <th>Ubicación</th>
+                        <th>Fecha</th>
+                        <th>Ruta Crítica</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody id="reportList">
+                    <!-- Registros generados dinámicamente -->
+                </tbody>
+            </table>
+        </section>
+
+        </main>
+
+	    <footer class="pie">
+            <br>
+            <br>
+            &copy Derechos de autor reservados - Save The Animals 2025
+        </footer>
+
+    </section>
+
+    <script src="/Login/auth.js"></script>
+    <script src="./Denunciar.js"></script>
+</body> 
+
+</html>

@@ -1,7 +1,7 @@
 // ===== VARIABLES GLOBALES BEM =====
 const BEM = {
     sidebar: '.sidebar',
-    navbarToggle: '.navbar__toggle-sidebar',
+    navbarToggle: '#toggleSidebar',
     menuOverlay: '#menuOverlay',
     form: '.critical-route__form',
     input: '#mapSearchInput',
@@ -47,6 +47,7 @@ window.addEventListener('resize', function() {
         closeSidebarMobile();
     }
 });
+
 
 // ===== CLASE PRINCIPAL DE LA APLICACIÓN =====
 class UbicarRutaApp {
